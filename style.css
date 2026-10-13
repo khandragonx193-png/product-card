@@ -1,0 +1,59 @@
+/* Reset cơ bản */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+.page-title {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  font-size: 1.75rem;
+}
+
+/* ========== FLEXBOX GRID ========== */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;          /* Cho phép xuống dòng khi hết chỗ */
+  gap: 20px;                 /* Khoảng cách đều giữa các card */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  /* flex-grow | flex-shrink | flex-basis */
+  flex: 1 1 calc(25% - 20px); /* 4 cột trên desktop, tự co giãn */
+  min-width: 220px;           /* Không nhỏ hơn 220px → tự xuống dòng trên mobile/tablet */
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #0f172a;
+}
+
+.product-card .price {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #2563eb;
+}
